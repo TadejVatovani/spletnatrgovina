@@ -1,5 +1,5 @@
 # Spletna trgovina
-To bo spletna trgovina v kateri lahko kupuješ kolendarje, razglednice, plakate, majice in skodelice s različnimi motivi.
+To bo spletna trgovina v kateri lahko kupuješ kolendarje, razglednice, plakate, majice, podloge za miško in skodelice s različnimi motivi.
 
 Omogočala bo:
 
