@@ -1,0 +1,167 @@
+body{
+	margin: 0;
+	
+}
+
+#header {
+	width: 100%;
+	height: 180px;
+    color: white;
+    background-color: gray;
+    text-align: center;
+	position:relative;
+}
+
+#logo{
+	height:100px;
+	border-radius: 10px;	
+}
+
+
+
+button{
+	width: 150px;
+	height: 30px;
+	background-color: white;	
+}
+
+button:hover{
+	background-color: red;
+	
+}
+
+#footer {
+	width: 100%;
+	height: 100px;
+    color: white;
+    background-color: black;
+    text-align: center;
+	position: relative;
+}
+
+box {
+	width: 100%;
+	height: 100%;
+	float: left;
+	background-color: blue;
+}
+
+#navbar {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	color: black;
+}
+
+.innershadow {
+	-webkit-box-shadow: inset 0px 0px 0px 2px rgba(89,89,89,1);
+	-moz-box-shadow: inset 0px 0px 0px 2px rgba(89,89,89,1);
+	box-shadow: inset 0px 0px 0px 2px rgba(89,89,89,1);
+}
+
+#navbar element {
+	width: 25%;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	line-height: 50px;
+}
+#navbar element a:link, a:visited {
+	color:black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#navbar element:hover {
+	-webkit-box-shadow:inset 0px -10px 0px 0px gray;
+	-moz-box-shadow:inset 0px -10px 0px 0px gray;
+	box-shadow:inset 0px -10px 0px 0px gray;
+}
+
+* {
+    font-family: arial;
+}
+
+.active {
+	background-color: orange;
+}
+
+ul.tree, ul.tree ul {
+    list-style-type: none;
+} 
+	
+
+.multicolumns
+         {
+            /* setting the number of columns to 3 */
+            -webkit-column-count: 3; 
+            -moz-column-count: 3; 
+            -o-column-count: 3;
+            column-count: 3;
+            /* setting the space between columns to 30px */
+            -webkit-column-gap: 30px;
+            -moz-column-gap: 30px; 
+            -o-column-gap: 30px; 
+            column-gap: 30px;
+            /* adding a 1px black line between each column */
+            -webkit-column-rule: 1px outset black; 
+            -moz-column-rule: 1px outset black; 
+            -o-column-rule: 1px outset black; 
+            column-rule: 1px outset black;
+}
+.duocolumns
+         {
+            /* setting the number of columns to 2*/
+            -webkit-column-count: 2; 
+            -moz-column-count: 2; 
+            -o-column-count: 2;
+            column-count: 2;
+			/* setting the space between columns to 30px */
+            -webkit-column-gap: 30px;
+            -moz-column-gap: 30px; 
+            -o-column-gap: 30px; 
+            column-gap: 30px;
+            /* adding a 1px black line between each column */
+            -webkit-column-rule: 1px outset black; 
+            -moz-column-rule: 1px outset black; 
+            -o-column-rule: 1px outset black; 
+            column-rule: 1px outset black;
+}
+		 
+.leftcenter {
+	margin: auto;
+	position: absolute;
+	top: 0; bottom: 0; left: 20px;
+}
+.leftbottom {
+	margin: auto;
+	position: absolute;
+	bottom: 0; left: 20px;
+}
+.lefttop {
+	margin: auto;
+	position: absolute;
+	top: 0; left: 20px;
+}
+.rightbottom {
+	margin: auto;
+	position: absolute;
+	bottom: 0; right: 20px;
+}
+.righttop {
+	margin: auto;
+	position: absolute;
+	top: 0; right: 20px;
+}
+.rightcenter {
+	margin: auto;
+	position: absolute;
+	top:0; bottom: 0;right: 20px;
+}
+.center {
+	margin: auto;
+	position: absolute;
+	top:10px ; bottom: 0; right:0; left: 0;
+	
+}
