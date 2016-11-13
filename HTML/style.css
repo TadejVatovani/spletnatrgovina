@@ -14,9 +14,10 @@ body{
 
 #logo{
 	height:100px;
+	float:left;
+	margin: 10px 0px 0px 10px ; 
 	border-radius: 10px;	
 }
-
 
 
 button{
@@ -46,34 +47,123 @@ box {
 	background-color: blue;
 }
 
-#navbar {
-	width: 100%;
-	height: 50px;
-	background-color: white;
-	color: black;
+.navigation {
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  background: white;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: strech;
+  
+  
 }
 
+.topbar {
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end; 
+  
+}
+
+.baritem{
+  padding: 0px;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: black;
+}
+
+.navitem {
+  flex-grow: 1;
+  padding: 0px;
+  height: auto;
+  width: 25%;	
+  text-align: center;
+}
+.navigation a:hover {
+  background: orange;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .topbar {
+	-webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+	  
+  }
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+	
+  .navitem {
+	flex-grow: 1;
+	padding: 0px;
+	height: auto;
+	width: 100%;	
+	text-align: center;
+	}
+  
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
 .innershadow {
 	-webkit-box-shadow: inset 0px 0px 0px 2px rgba(89,89,89,1);
 	-moz-box-shadow: inset 0px 0px 0px 2px rgba(89,89,89,1);
 	box-shadow: inset 0px 0px 0px 2px rgba(89,89,89,1);
 }
 
-#navbar element {
-	width: 25%;
-	float: left;
+element {
+	width: 100%;
 	text-align: center;
 	text-decoration: none;
 	line-height: 50px;
+	display: inline-block;
 }
-#navbar element a:link, a:visited {
+element a:link, a:visited {
 	color:black;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
 }
 
-#navbar element:hover {
+element:hover {
 	-webkit-box-shadow:inset 0px -10px 0px 0px gray;
 	-moz-box-shadow:inset 0px -10px 0px 0px gray;
 	box-shadow:inset 0px -10px 0px 0px gray;
@@ -87,81 +177,3 @@ box {
 	background-color: orange;
 }
 
-ul.tree, ul.tree ul {
-    list-style-type: none;
-} 
-	
-
-.multicolumns
-         {
-            /* setting the number of columns to 3 */
-            -webkit-column-count: 3; 
-            -moz-column-count: 3; 
-            -o-column-count: 3;
-            column-count: 3;
-            /* setting the space between columns to 30px */
-            -webkit-column-gap: 30px;
-            -moz-column-gap: 30px; 
-            -o-column-gap: 30px; 
-            column-gap: 30px;
-            /* adding a 1px black line between each column */
-            -webkit-column-rule: 1px outset black; 
-            -moz-column-rule: 1px outset black; 
-            -o-column-rule: 1px outset black; 
-            column-rule: 1px outset black;
-}
-.duocolumns
-         {
-            /* setting the number of columns to 2*/
-            -webkit-column-count: 2; 
-            -moz-column-count: 2; 
-            -o-column-count: 2;
-            column-count: 2;
-			/* setting the space between columns to 30px */
-            -webkit-column-gap: 30px;
-            -moz-column-gap: 30px; 
-            -o-column-gap: 30px; 
-            column-gap: 30px;
-            /* adding a 1px black line between each column */
-            -webkit-column-rule: 1px outset black; 
-            -moz-column-rule: 1px outset black; 
-            -o-column-rule: 1px outset black; 
-            column-rule: 1px outset black;
-}
-		 
-.leftcenter {
-	margin: auto;
-	position: absolute;
-	top: 0; bottom: 0; left: 20px;
-}
-.leftbottom {
-	margin: auto;
-	position: absolute;
-	bottom: 0; left: 20px;
-}
-.lefttop {
-	margin: auto;
-	position: absolute;
-	top: 0; left: 20px;
-}
-.rightbottom {
-	margin: auto;
-	position: absolute;
-	bottom: 0; right: 20px;
-}
-.righttop {
-	margin: auto;
-	position: absolute;
-	top: 0; right: 20px;
-}
-.rightcenter {
-	margin: auto;
-	position: absolute;
-	top:0; bottom: 0;right: 20px;
-}
-.center {
-	margin: auto;
-	position: absolute;
-	top:10px ; bottom: 0; right:0; left: 0;
-	
-}
