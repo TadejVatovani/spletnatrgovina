@@ -1,63 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>Web Shop</title>
+	<meta charset="UTF-8"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Web Shop</title>
 </head>
 <body>
-
-<div id="header">
-	<div>
-		<ul class="topbar">
-			<li class="baritem"><button type="button" >Login</button> 
-			<li class="baritem"><button type="button" >Cart</button> 
-		</ul>
+<div id="container">
+	<div id="header">
+		<img src="images/logo.jpg" id="logo" alt="image of a logo">
+			<ul class="navigation">
+			  <li class="navitem active" >
+				<a class="center" href="Home.html">Home</a>
+			  </li>
+			  <li class="navitem">
+				<a class="center" href="Shop.html">Shop</a>
+			  </li>
+			  <li class="navitem">
+				<a class="center" href="About.html">About</a>
+			  </li>
+			  <li class="navitem">
+				<a class="center" href="Contact.html">Contact us</a>
+			  </li>
+			  <li class="navitem2">
+				<a class="center" href="Login.html">Login</a>
+			  </li>  
+			  <li class="navitem">
+				<div class="center"><img src="./images/cart.png" style="padding-right: 4px" alt="shopping cart"><a href="Cart.html">Cart</a></div>
+			  </li>
+			</ul>
 	</div>
-	</div>
-		<ul class="navigation">
-		  <li class="navitem"><a href="Home.html" class="active">Home</a></li>
-		  <li class="navitem"><a href="Shop.html">Shop</a></li>
-		  <li class="navitem"><a href="About.html">About</a></li>
-		  <li class="navitem"><a href="Contact.html">Contact Us</a></li>
-		</ul>
-	</div>
-</div>
+	<div id="body">
+		<div style="text-align:center">
+			<h2>New items</h2>
+			<div>
+			<img src="./izdelki/zmaj.jpg" style="max-height:300px;max-width: 80%;width:auto;height:auto;" alt="image of a product">
+			<div style="font-weight:bold;">Zmaj</div>
+			</div>
+			
+		</div>
+		<hr>
+		<h2 style="text-align:center" >Offers</h2>
 
-<div style="Background-color:lightblue;">
-<br>
-<div style="text-align:center">
-	<h2>New items</h2>
-	<div>
-	<img src="./izdelki/zmaj.jpg" style="max-height:300px;width:auto;height:auto;"></img>
-	<div style="font-weight:bold;">Zmaj</div>
+		<div class="content wrap">
+			<div style="min-width: 200px; margin: 0px 20px 20px 20px; width:20%;">
+				<img src="./izdelki/zmaj.jpg" style="width:100%;height:auto;" alt="image of a product">
+				<div style="font-weight:bold;">Zmaj</div>
+			</div>
+			<div style="min-width: 200px;margin: 0px 20px 20px 20px; width:20%;">
+				<img src="./izdelki/zmaj.jpg" style=" width:100%;height:auto;" alt="image of a product">
+				<div style="font-weight:bold;">Zmaj</div>
+			</div >
+			<div style="min-width: 200px; margin: 0px 20px 20px 20px; width:20%;">
+				<img src="./izdelki/zmaj.jpg" style="width:100%;height:auto;" alt="image of a product">
+				<div style="font-weight:bold;">Zmaj</div>
+			</div>
+		</div>
+
+		<br>
+		<br>	
 	</div>
-	
-</div>
-
-<hr>
-<h2 style="text-align:center" >Offers</h2>
-
-<div class="content">
-	<div style="min-width: 200px; margin: 0px 20px 20px 20px; width:20%;">
-		<img src="./izdelki/zmaj.jpg" style="width:100%;height:auto;"></img>
-		<div style="font-weight:bold;">Zmaj</div>
+	<div id="footer">
+		<h3 class="center">Copyright</h3>
 	</div>
-	<div style="min-width: 200px;margin: 0px 20px 20px 20px; width:20%;">
-		<img src="./izdelki/zmaj.jpg" style=" width:100%;height:auto;"></img>
-		<div style="font-weight:bold;">Zmaj</div>
-	</div >
-	<div style="min-width: 200px; margin: 0px 20px 20px 20px; width:20%;">
-		<img src="./izdelki/zmaj.jpg" style="width:100%;height:auto;"></img>
-		<div style="font-weight:bold;">Zmaj</div>
-	</div>
-</div>
-
-<br>
-<br>
-</div>
-
-<div id="footer">
-	<h3 class="center">Copyright</h3>
 </div>
 </body>
+
+
 </html>

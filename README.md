@@ -9,3 +9,7 @@ Omogočala bo:
 * dodajanje izdelka v košarico,
 * naročanje izdelka,
 * pregled in urejanje naročil.
+
+Namenjena je uporabnikom, ki jih zanima nakup tovrstnih izdelkov.
+
+Aplikacija bo podpirala mobilne/pametne telefone in namizne/prenosne računalnike različne velikosti
