@@ -191,7 +191,7 @@ body{
   }
 }
 
-@media all and (max-width: 600px) {
+@media screeny and (max-width: 600px) {
   .navigation {
 	padding: 0;
 	height: 252px;
