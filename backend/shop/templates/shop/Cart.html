@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+{% load static %} 
+<html>
+<head>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<title>Web Shop</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<img src="{% static 'images/logo.jpg' %}" id="logo" alt="image of a logo">
+		<ul class="navigation">
+		  <li class="navitem" >
+			<a class="center" href="{% url 'home' %}">Home</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'shop' %}">Shop</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'about' %}">About</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'contact' %}">Contact us</a>
+		  </li>
+		  {% if user.is_authenticated %}
+		  <li class="navitem2">
+			<a class="center" href="{% url 'logoutuser' %}">Logout</a>
+		  </li> 
+		  {% else %} 
+		   <li class="navitem2">
+			<a class="center" href="{% url 'loginuser' %}">Login</a>
+		  </li> 
+		  {% endif %}
+		  <li class="navitem  active">
+			<div class="center"><img src="{% static './images/cart.png' %}" style="padding-right: 4px" alt="shopping cart"><a href="{% url 'cart' %}">Cart</a></div>
+		  </li>
+		</ul>
+	</div>
+	<div id="body">
+		{% if products %}
+		<h2 style="text-align:center" >Your cart:</h2>	
+		<div>
+			<form class="rows wrap" action="{% url 'checkorder' %}" method="post">
+			{% csrf_token %}
+			{% for product in products %}
+				<div class= "columns" >
+					<div class="rows listitem" >
+						<img src="{% static './izdelki/' %}{{product.name}}.JPG" style="width:50px;height:50px;" alt="image of a product">
+					</div>
+					<div class="rows listitem" >
+						<span style="font-weight:bold">Product: </span>
+						<span>{{ product.name }}</span>
+					</div>
+					<div class="rows listitem" >
+						<span style="font-weight:bold">Price: </span>
+						<span>{{ product.price }}€</span>
+					</div>		
+					<div class="rows listitem"  >
+						<span style="font-weight:bold">Quantity: </span>							
+						<input style="width:1005" type="number" name="{{ product.id }}" value="1" >
+					</div>
+					<div class="rows listitem" >
+						<a href="{% url 'deletefromcart' product.id %}"><img style="width: 20px;height: 20px"  img src="{% static './images/delete.png' %}" /></a>
+					</div>
+				</div>
+			{% endfor %}
+			<input type="submit" style="width:100%" class="listitem" value="Check order"/>
+			</form>	
+		</div>
+		{% else %}
+		<h2 style="text-align:center" >Your cart is empty</h2>	
+		{% endif %}
+	</div>
+	<div id="footer">
+		<h3 class="center">Copyright</h3>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	Background-color:lightgray;
+}
+#container {
+   min-height:100vh;
+   position: relative;  
+   height: 100%;
+   overflow:auto;
+}
+
+#body {
+   padding:10px;
+   padding-bottom: 80px;
+}
+
+#header {
+	width: 100%;
+    color: white;
+    background-color: gray;
+    text-align: center;
+	position:relative;
+}
+
+#footer {
+	position:absolute;
+    bottom: 0;
+	width: 100%;
+	height: 60px;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+#logo{
+	height:150px;
+	margin: 10px 0px 0px 10px ; 
+	border-radius: 10px;	
+}
+
+.content {
+  width: 100%;
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;  
+  text-align: center;
+  
+}
+
+.columns {
+  width: 100%;
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  flex-flow: row;
+  justify-content: space-around; 
+  text-align: center;
+	
+}
+
+.rows {
+  width: 100%;
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;  
+  align-content: center;
+  text-align: center;
+}
+
+.list{
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  width:130px;
+ 
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: stretch;
+}
+
+.listitem { 
+  cursor: pointer;
+  background-color: white;
+  justify-content: center;
+  padding: 10px 15px 10px 15px;
+  border-top: 1px solid rgba(255,255,255,0.3); 
+  border-bottom: 1px solid rgba(0,0,0,0.1); 
+  text-decoration: none;
+  color: black;
+}
+
+.list li:last-of-type listitem {
+  border-bottom: none;
+}
+
+.listitem:hover {
+  background-color: lightgray;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.navigation {
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  height: 40px;
+  background: white;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+}  
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+.navitem {
+  display: flex; 
+  justify-content: center;
+  padding: 10px 15px 10px 15px;
+}
+.center{
+	align-self: center;
+	width:100%;
+}
+.navitem2 {
+  display: flex; 
+  justify-content: center;
+  padding: 10px 15px 10px 15px;
+  margin-left: auto;	
+}
+
+
+.navitem:hover {
+  background-color: orange;
+}
+
+.navitem2:hover {
+  background-color: orange;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation {
+	padding: 0;
+	height: 252px;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+	justify-content: center;
+	align-items: stretch;
+	text-align:center;
+  }
+	
+  .navitem {
+	margin: auto;
+	padding: 10px 15px 10px 15px;
+	border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+  
+  .navitem2 {
+	margin: auto;
+	padding: 10px 15px 10px 15px;
+	border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+  .navigation li{
+	width:100%;
+	padding:10px 0px 10px 0px
+  }
+
+  .content {
+	-webkit-flex-flow: column wrap;
+	flex-flow: column wrap;
+	align-items:center;
+  }
+  .list{
+	  width:100%;
+	  text-align: center;
+	  padding-bottom: 20px;
+  }
+}
+
+.innershadow {
+	-webkit-box-shadow: inset 0px 0px 24px -7px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 24px -7px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 24px -7px rgba(0,0,0,0.75);
+}
+.border{
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid gray;
+}
+
+* {
+    font-family: arial;
+}
+
+.active {
+	background-color: orange;
+}
+
+.imagesmall {
+	max-height: 200px;
+	max-width: 200px;
+	width: auto;
+	height: auto;
+	margin: 0px 20px 20px 20px;
+}
+.form {
+	background-color: white; 
+	padding: 20px;
+	width: 300px;
+	align-items: flex-start;  	
+}

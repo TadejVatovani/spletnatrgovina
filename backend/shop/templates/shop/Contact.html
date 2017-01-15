@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+{% load static %} 
+<html>
+<head>
+	<meta charset="UTF-8"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Web Shop</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<img src="{% static 'images/logo.jpg' %}" id="logo" alt="image of a logo">
+		<ul class="navigation">
+		  <li class="navitem" >
+			<a class="center" href="{% url 'home' %}">Home</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'shop' %}">Shop</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'about' %}">About</a>
+		  </li>
+		  <li class="navitem active">
+			<a class="center" href="{% url 'contact' %}">Contact us</a>
+		  </li>
+		  {% if user.is_authenticated %}
+		  <li class="navitem2">
+			<a class="center" href="{% url 'logoutuser' %}">Logout</a>
+		  </li> 
+		  {% else %} 
+		   <li class="navitem2">
+			<a class="center" href="{% url 'loginuser' %}">Login</a>
+		  </li> 
+		  {% endif %}
+		  <li class="navitem">
+			<div class="center"><img src="{% static './images/cart.png' %}" style="padding-right: 4px" alt="shopping cart"><a href="{% url 'cart' %}">Cart</a></div>
+		  </li>
+		</ul>
+	</div>
+	<div id="body">
+		<div style="text-align:center" >
+			<div class="rows">
+				<div>
+				<h1>Phone number:</h1>
+				<h3>(+386)41 034 021</h3>
+				</div>
+				<div>
+				<h1>Address:</h1>
+				<h3>Some street, Ljubljana, 1000</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<h3 class="center">Copyright</h3>
+	</div>
+</div>
+</body>
+
+</html>

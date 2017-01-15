@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+{% load static %} 
+<html>
+<head>
+	<meta charset="UTF-8"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Web Shop</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<img src="{% static 'images/logo.jpg' %}" id="logo" alt="image of a logo">
+		<ul class="navigation">
+		  <li class="navitem" >
+			<a class="center" href="{% url 'home' %}">Home</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'shop' %}">Shop</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'about' %}">About</a>
+		  </li>
+		  <li class="navitem">
+			<a class="center" href="{% url 'contact' %}">Contact us</a>
+		  </li>
+		  {% if user.is_authenticated %}
+		  <li class="navitem2">
+			<a class="center" href="{% url 'logoutuser' %}">Logout</a>
+		  </li> 
+		  {% else %} 
+		   <li class="navitem2">
+			<a class="center" href="{% url 'loginuser' %}">Login</a>
+		  </li> 
+		  {% endif %}
+		  <li class="navitem">
+			<div class="center"><img src="{% static './images/cart.png' %}" style="padding-right: 4px" alt="shopping cart"><a href="{% url 'cart' %}">Cart</a></div>
+		  </li>
+		</ul>
+	</div>
+	<div id="body">
+		<h2 style="text-align:center" >Register:</h2>
+		<div class= "rows" >	
+			<form class="rows border form" action="{% url 'register' %}" method="post">
+				{% csrf_token %}
+				<label style="padding-bottom: 5px">Email: </label>
+				<input style="width:100%" type="email" name="email" placeholder="example@provider.com" required>
+				<label style="padding:20px 0px 5px 0px">Name: </label>
+				<input style="width:100%" type="text" name="name" placeholder="Jack" required>
+				<label style="padding:20px 0px 5px 0px">Lastname: </label>
+				<input style="width:100%" type="text" name="lastname" placeholder="Smith" required>
+				<label style="padding:20px 0px 5px 0px">Address: </label>
+				<input style="width:100%" type="text" name="address" placeholder="Some Street 15" required>
+				<label style="padding:20px 0px 5px 0px">Zip code: </label>
+				<input style="width:100%" type="text" name="zipcode" placeholder="1000" required>
+				<label style="padding:20px 0px 5px 0px">Phone number: </label>
+				<input style="width:100%" type="text" name="phone" placeholder="031123456">
+				<label style="padding:20px 0px 5px 0px">Password: </label>
+				<input style="width:100%" type="password" name="password" placeholder="Password" required>
+				<label style="padding:20px 0px 5px 0px">Confirm password: </label>
+				<input style="width:100%" type="password" name="confirm" placeholder="Password" required>
+				<span style="padding-top: 20px"><input type="submit" value="Register"></span>		
+			</form>
+		</div>
+	</div>
+	<div id="footer">
+		<h3 class="center">Copyright</h3>
+	</div>
+</div>
+</body>
+</html>

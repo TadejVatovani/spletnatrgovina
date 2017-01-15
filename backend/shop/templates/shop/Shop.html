@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+{% load static %} 
+<html>
+<head>
+	<meta charset="UTF-8"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Web Shop</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<img src="{% static 'images/logo.jpg' %}" id="logo" alt="image of a logo">
+			<ul class="navigation">
+			  <li class="navitem" >
+				<a class="center" href="{% url 'home' %}">Home</a>
+			  </li>
+			  <li class="navitem active">
+				<a class="center" href="{% url 'shop' %}">Shop</a>
+			  </li>
+			  <li class="navitem">
+				<a class="center" href="{% url 'about' %}">About</a>
+			  </li>
+			  <li class="navitem">
+				<a class="center" href="{% url 'contact' %}">Contact us</a>
+			  </li>
+			  {% if user.is_authenticated %}
+			  <li class="navitem2">
+				<a class="center" href="{% url 'logoutuser' %}">Logout</a>
+			  </li> 
+			  {% else %} 
+			   <li class="navitem2">
+				<a class="center" href="{% url 'loginuser' %}">Login</a>
+			  </li> 
+			  {% endif %}  
+			  <li class="navitem">
+				<div class="center"><img src="{% static './images/cart.png' %}" style="padding-right: 4px" alt="shopping cart"><a href="{% url 'cart' %}">Cart</a></div>
+			  </li>
+			</ul>
+	</div>
+	<div id="body">
+		<div class="content">
+				<ul class="list" id="categories"> 
+					<a class="listitem" href="{% url 'shopcategory' category='Calendars' %}">Calendars</a>
+					<a class="listitem" href="{% url 'shopcategory' category='Keychains' %}">Keychains</a>
+					<a class="listitem" href="{% url 'shopcategory' category='Mousepads' %}">Mousepads</a>
+					<a class="listitem" href="{% url 'shopcategory' category='Mugs' %}">Mugs</a>
+					<a class="listitem" href="{% url 'shopcategory' category='Notepads' %}">Notepads</a>
+					<a class="listitem" href="{% url 'shopcategory' category='Postcards' %}">Postcards</a>	
+					<a class="listitem" href="{% url 'shopcategory' category='Posters' %}">Posters</a>			
+					<a class="listitem" href="{% url 'shopcategory' category='Shirts' %}">Shirts</a>
+					<form class="list" action="{% url 'search' %}" method="post">
+							{% csrf_token %}
+							<input class="listitem" type="search" name="search" value="Search"/>	
+					</form>
+				</ul>
+			<div  class="content wrap">
+					{% for product in products %}
+						<div style="padding-bottom:5px">
+							<img title="Description: {{product.description}}, Size: {{product.size}}"class="imagesmall" src="{% static './izdelki/' %}{{ product.name }}.JPG" alt="image of a product" />					
+							<div style="font-weight:bold;">
+							<form  action="{% url 'addtocart' %}" method="post">
+								{% csrf_token %}
+								<input type="hidden" name="product" value="{{ product.id }}">
+								<span>{{product.name}}, {{product.price}}€ <input type="image" style="width: 20px;height: 20px" title="Adds the item to your cart" img src="{% static './images/plus.png' %}" /></span>
+							</form>
+							</div>
+						</div>
+					{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<h3 class="center">Copyright</h3>
+	</div>
+</div>
+</body>
+
+</html>
