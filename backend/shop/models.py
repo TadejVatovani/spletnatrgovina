@@ -11,17 +11,23 @@ class Product(models.Model):
 	category = models.CharField(max_length=20)
 	supply = models.IntegerField(default=0)
 	price = models.FloatField(default=0)
+	def __str__(self):
+		return self.name
 
 class Customer(models.Model):
 	name = models.CharField(max_length=20)
 	lastname = models.CharField(max_length=20)
 	email = models.CharField(max_length=20)
 	phone = models.CharField(validators=[RegexValidator(regex='^\d{9}$', message='A phone number is 9 digits', code='nomatch')],max_length=9)
+	def __str__(self):
+		return self.email
 	
 class Address(models.Model):
 	id_Customer= models.ForeignKey(Customer, on_delete=models.CASCADE)
 	postal= models.CharField(validators=[RegexValidator(regex='^\d{4}$', message='Not a postal code', code='nomatch')],max_length=4)
 	address = models.CharField(max_length=50)
+	def __str__(self):
+		return self.address
 
 class Receipt(models.Model):
 	id_Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
@@ -38,3 +44,5 @@ class Promotion(models.Model):
 	discount = models.FloatField(default=0)
 	start = models.DateTimeField('date of the start of the promotion', default=timezone.now )
 	end = models.DateTimeField('date of the end of the promotion', default=timezone.now )
+	def __str__(self):
+		return self.id_Product.name

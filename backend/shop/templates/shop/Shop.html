@@ -57,7 +57,7 @@
 			<div  class="content wrap">
 					{% for product in products %}
 						<div style="padding-bottom:5px">
-							<img title="Description: {{product.description}}, Size: {{product.size}}"class="imagesmall" src="{% static './izdelki/' %}{{ product.name }}.JPG" alt="image of a product" />					
+							<img title="Description: {{product.description}}, Size: {{product.size}}"class="imagesmall" src="{% static './izdelki/' %}{{ product.name }}.jpg" alt="image of a product" />					
 							<div style="font-weight:bold;">
 							<form  action="{% url 'addtocart' %}" method="post">
 								{% csrf_token %}
