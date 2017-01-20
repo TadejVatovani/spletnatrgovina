@@ -27,7 +27,7 @@ SECRET_KEY = 'qu71_mg@a=q7bl4&t)y6gxbg821(l&dmuff5lk0%26s0me6hde'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spletna-trgovina-tadejvat.c9users.io']
+ALLOWED_HOSTS = ['spletna-trgovina-tadejvat.c9users.io', '127.0.0.1']
 
 # Application definition
 

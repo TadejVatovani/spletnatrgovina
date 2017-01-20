@@ -3,7 +3,7 @@ from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-# Create your models here.
+app_name = 'shop'
 class Product(models.Model):
 	name = models.CharField(max_length=40)
 	description = models.CharField(max_length=200)
@@ -17,7 +17,7 @@ class Product(models.Model):
 class Customer(models.Model):
 	name = models.CharField(max_length=20)
 	lastname = models.CharField(max_length=20)
-	email = models.CharField(max_length=20)
+	email = models.EmailField(max_length=20)
 	phone = models.CharField(validators=[RegexValidator(regex='^\d{9}$', message='A phone number is 9 digits', code='nomatch')],max_length=9)
 	def __str__(self):
 		return self.email
